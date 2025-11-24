@@ -27,6 +27,7 @@ class BorrowController extends Controller
         $request->validate([
             'book_id' => 'required|exists:books,id',
             'borrow_date' => 'required|date',
+            'due_date' => 'required|date|after_or_equal:borrow_date',
         ]);
 
         $book = Book::findOrFail($request->book_id);
@@ -44,8 +45,10 @@ class BorrowController extends Controller
             'user_id' => $user->id,
             'book_id' => $book->id,
             'borrow_date' => $request->borrow_date,
+            'due_date' => $request->due_date,
             'return_date' => null,
             'status' => 'borrowed',
+            'fine_amount' => 0,
         ]);
 
         return response()->json($borrow, 201);
@@ -79,11 +82,20 @@ class BorrowController extends Controller
             // Increment available copies
             $book = Book::findOrFail($borrow->book_id);
             $book->increment('available_copies');
+
+            // Calculate fine if return_date is after due_date
+            $fine = 0;
+            if ($request->return_date > $borrow->due_date) {
+                $daysLate = (strtotime($request->return_date) - strtotime($borrow->due_date)) / (60 * 60 * 24);
+                $fine = $daysLate * 1.00; // Example: 1.00 currency unit per day late
+            }
+            $borrow->fine_amount = $fine;
         }
 
         $borrow->update([
             'return_date' => $request->return_date,
             'status' => $request->status,
+            'fine_amount' => $borrow->fine_amount ?? 0,
         ]);
 
         return response()->json($borrow, 200);

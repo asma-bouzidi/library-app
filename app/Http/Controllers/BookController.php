@@ -8,9 +8,31 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     // List all books
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(Book::all(), 200);
+        // Get query parameters for filtering
+        $query = Book::query();
+
+        if ($request->has('title')) {
+            $query->where('title', 'like', '%' . $request->input('title') . '%');
+        }
+
+        if ($request->has('author')) {
+            $query->where('author', 'like', '%' . $request->input('author') . '%');
+        }
+
+        if ($request->has('category')) {
+            $query->where('category', $request->input('category'));
+        }
+
+        if ($request->has('year')) {
+            $query->where('year', $request->input('year'));
+        }
+
+        // Paginate the results, default 10 per page
+        $books = $query->paginate(10);
+
+        return response()->json($books, 200);
     }
 
     // Store a new book record
