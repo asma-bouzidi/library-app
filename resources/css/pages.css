@@ -1,11 +1,157 @@
+/* ==============================
+   OLD MONEY CSS - Library App
+   All Pages: Home, Books List, Add/Edit Book, Login, Register, Dashboard
+============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-cream text-espresso font-sans;
+/* ==============================
+   Colors (custom)
+============================== */
+:root {
+    --cream: #F8F4EC;
+    --espresso: #2B1F1A;
+    --mocha: #4B3621;
+    --sage: #7C8C72;
+    --gold: #C6A15B;
 }
 
-h1, h2, h3 {
-  @apply font-serif text-mocha;
+/* ==============================
+   Body & Typography
+============================== */
+body {
+    @apply bg-[var(--cream)] text-[var(--espresso)] font-sans min-h-screen flex flex-col;
+}
+
+h1, h2, h3, h4 {
+    @apply font-serif text-[var(--mocha)];
+    letter-spacing: 0.03em;
+}
+
+p, span {
+    @apply text-[var(--sage)];
+}
+
+/* ==============================
+   Buttons
+============================== */
+.om-btn,
+.add-book-button,
+.login-button,
+.register-button {
+    @apply px-6 py-2 rounded-2xl font-serif tracking-wide transition-all cursor-pointer;
+    background-color: var(--gold);
+    color: var(--espresso);
+}
+.om-btn:hover,
+.add-book-button:hover,
+.login-button:hover,
+.register-button:hover {
+    background-color: #b08d4f;
+}
+
+/* ==============================
+   Cards (Books & Dashboard)
+============================== */
+.book-card,
+.dashboard-card,
+.add-book-form,
+.edit-book-form,
+.login-form,
+.register-form {
+    @apply border rounded-2xl p-6 shadow-sm;
+    background-color: #FAFAF7;
+    border-color: #E5DCC8;
+}
+
+/* ==============================
+   Inputs
+============================== */
+.add-book-input,
+.login-input,
+.register-input,
+.edit-book-input {
+    @apply w-full px-4 py-2 border rounded-xl focus:outline-none mb-4;
+    border-color: #D6CBB5;
+    background-color: transparent;
+}
+
+/* ==============================
+   Header & Footer
+============================== */
+header {
+    @apply bg-[var(--espresso)] text-[var(--cream)] py-6 px-10 flex justify-between items-center;
+}
+
+footer {
+    @apply bg-[var(--espresso)] text-[var(--cream)] text-center py-8 text-sm tracking-wider;
+}
+
+/* ==============================
+   Links
+============================== */
+a {
+    @apply transition-colors;
+    color: var(--espresso);
+}
+a:hover {
+    color: var(--gold);
+}
+
+/* ==============================
+   Grid Layout
+============================== */
+.grid {
+    @apply gap-8;
+}
+
+/* ==============================
+   Forms
+============================== */
+form label {
+    @apply block mb-2 text-sm font-serif;
+}
+form input,
+form select,
+form textarea {
+    @apply add-book-input;
+}
+
+/* ==============================
+   Text Alignment
+============================== */
+.text-center { @apply text-center; }
+.text-right { @apply text-right; }
+.text-left { @apply text-left; }
+
+/* ==============================
+   Margins & Paddings
+============================== */
+.mb-2 { @apply mb-2; }
+.mb-4 { @apply mb-4; }
+.mb-6 { @apply mb-6; }
+.mb-8 { @apply mb-8; }
+.mt-2 { @apply mt-2; }
+.mt-4 { @apply mt-4; }
+.mt-6 { @apply mt-6; }
+.mt-8 { @apply mt-8; }
+.p-4 { @apply p-4; }
+.p-6 { @apply p-6; }
+.p-8 { @apply p-8; }
+
+/* ==============================
+   Typography Helpers
+============================== */
+.italic { @apply italic; }
+
+/* ==============================
+   Responsive Helpers
+============================== */
+@media (min-width: 768px) {
+    .home-title { @apply text-5xl; }
+    .home-subtitle { @apply text-xl; }
 }

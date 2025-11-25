@@ -1,19 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Liste des Livres - Library App')
+@section('title', 'Accueil - Library App')
 
 @section('content')
-<div class="books-body mb-12 text-center">
-    <h1 class="home-title mb-4 text-4xl md:text-5xl font-serif">Collection de Livres</h1>
-    <p class="home-subtitle text-lg md:text-xl text-sage">Découvrez tous vos ouvrages préférés</p>
-</div>
-
-<div class="flex justify-end mb-6">
-    <a href="{{ url('/books/create') }}" class="om-btn">Ajouter un Livre</a>
+<div class="home-body text-center mb-12">
+    <h1 class="home-title mb-4 text-4xl md:text-5xl font-serif">Bienvenue dans votre bibliothèque</h1>
+    <p class="home-subtitle text-lg md:text-xl text-sage">Une collection raffinée de livres classiques et modernes</p>
 </div>
 
 <div class="grid md:grid-cols-3 gap-8">
-    @foreach($books as $book)
+    @foreach($featuredBooks as $book)
         <div class="book-card">
             <h3 class="book-title mb-2 text-2xl font-serif">{{ $book->title }}</h3>
             <p class="book-author mb-4 text-sage">{{ $book->author }}</p>

@@ -1,44 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Library App')</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @vite('resources/css/pages.css')
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans min-h-screen flex flex-col">
-    <header class="bg-white shadow mb-6">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="{{ route('books.index') }}" class="text-xl font-bold text-red-600 hover:text-red-700">Library App</a>
-            <nav>
-                <a href="{{ route('books.index') }}" class="text-gray-700 hover:text-red-600 font-semibold mr-4">Books</a>
-                <a href="{{ route('books.create') }}" class="text-gray-700 hover:text-red-600 font-semibold">Add Book</a>
-            </nav>
-        </div>
+<body class="bg-cream text-espresso font-sans min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-espresso text-cream py-6 px-10 flex justify-between items-center">
+        <a href="/" class="text-2xl font-serif">Library</a>
+        <nav class="space-x-4">
+            <a href="/books" class="hover:text-gold transition-colors">Livres</a>
+            <a href="/dashboard" class="hover:text-gold transition-colors">Dashboard</a>
+            @guest
+                <a href="/login" class="hover:text-gold transition-colors">Connexion</a>
+                <a href="/register" class="hover:text-gold transition-colors">Inscription</a>
+            @else
+                <form method="POST" action="{{ route('logout') }}" class="inline">
+                    @csrf
+                    <button type="submit" class="hover:text-gold transition-colors">Déconnexion</button>
+                </form>
+            @endguest
+        </nav>
     </header>
 
-    <main class="container mx-auto px-4 flex-grow">
-        @if (session('status'))
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        @if ($errors->any())
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
+    <!-- Main content -->
+    <main class="flex-grow container mx-auto px-4 py-8">
         @yield('content')
     </main>
 
-    <footer class="bg-white shadow-inner mt-12 py-4 text-center text-gray-500 text-sm">
-        &copy; {{ date('Y') }} Library App. All rights reserved.
+    <!-- Footer -->
+    <footer class="bg-espresso text-cream text-center py-8 text-sm tracking-wider">
+        &copy; {{ date('Y') }} Library App. Tous droits réservés.
     </footer>
+
 </body>
 </html>
