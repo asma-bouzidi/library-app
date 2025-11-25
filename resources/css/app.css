@@ -1,87 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
 
-@import 'tailwindcss';
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-      'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-/* Global base styles */
-body {
-    background-color: #FDFDFC;
-    color: #1b1b18;
-    font-family: var(--font-sans);
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: #f53003;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: #d12700; /* slightly darker red */
-}
-
-/* Layout and base enhancements */
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-sans);
-    background-color: #FDFDFC;
-    color: #1b1b18;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  background-color: #F5F5F0;
+  color: #2E2E2E;
+  font-family: 'Inter', sans-serif;
 }
 
-main {
-    flex-grow: 1;
-    padding-top: 0;
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.04em;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #e5e7eb;
-    margin-bottom: 1rem;
+.om-btn {
+  @apply px-6 py-2 rounded-2xl font-serif tracking-wide transition;
+  background-color: #C6A15B;
+  color: #2F2A24;
 }
 
-th, td {
-    border: 1px solid #e5e7eb;
-    padding: 0.75rem;
-    text-align: left;
+.om-btn:hover {
+  background-color: #b08d4f;
 }
 
-th {
-    background-color: #f9fafb;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.875rem;
-    color: #374151;
+.om-card {
+  @apply border rounded-2xl p-6 shadow-sm;
+  background-color: #FAFAF7;
+  border-color: #E5DCC8;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f3f4f6;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #dc2626;
-    border-color: #dc2626;
-}
-
-button, .btn {
-    cursor: pointer;
+.om-input {
+  @apply w-full px-4 py-2 border rounded-xl focus:outline-none;
+  border-color: #D6CBB5;
+  background-color: transparent;
 }
