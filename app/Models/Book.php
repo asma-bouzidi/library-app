@@ -17,6 +17,7 @@ class Book extends Model
         'isbn',
         'description',
         'cover_image',
+        'available_copies',
     ];
 
     // Define relationships and other model methods as needed

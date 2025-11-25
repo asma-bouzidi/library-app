@@ -1,38 +1,36 @@
+/* ==============================
+   Tailwind CSS + Google Fonts
+   Old Money Library App
+============================== */
+
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
 
+/* Tailwind Directives */
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
 
+/* Custom font families */
 body {
-  background-color: #F5F5F0;
-  color: #2E2E2E;
-  font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 0.04em;
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
 }
 
-.om-btn {
-  @apply px-6 py-2 rounded-2xl font-serif tracking-wide transition;
-  background-color: #C6A15B;
-  color: #2F2A24;
+/* Optional: add CSS variables for colors */
+:root {
+    --cream: #F8F4EC;
+    --espresso: #2B1F1A;
+    --mocha: #4B3621;
+    --sage: #7C8C72;
+    --gold: #C6A15B;
 }
 
-.om-btn:hover {
-  background-color: #b08d4f;
-}
-
-.om-card {
-  @apply border rounded-2xl p-6 shadow-sm;
-  background-color: #FAFAF7;
-  border-color: #E5DCC8;
-}
-
-.om-input {
-  @apply w-full px-4 py-2 border rounded-xl focus:outline-none;
-  border-color: #D6CBB5;
-  background-color: transparent;
-}
+/* Now you can use Tailwind classes directly in Blade templates
+   e.g., bg-[var(--cream)], text-[var(--espresso)], hover:bg-[var(--gold)]
+*/
