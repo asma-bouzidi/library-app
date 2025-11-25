@@ -23,6 +23,20 @@ class BorrowController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
+        $BORROW_LIMIT = 3;
+
+        // Check borrowing limit for regular users
+        if (!$user->isAdmin()) {
+            $activeBorrowsCount = Borrow::where('user_id', $user->id)
+                ->where('status', 'borrowed')
+                ->count();
+
+            if ($activeBorrowsCount >= $BORROW_LIMIT) {
+                throw ValidationException::withMessages([
+                    'borrow_limit' => ['You have reached the maximum borrow limit of ' . $BORROW_LIMIT . ' books.'],
+                ]);
+            }
+        }
 
         $request->validate([
             'book_id' => 'required|exists:books,id',

@@ -43,9 +43,13 @@ class BorrowTest extends TestCase
     {
         $book = Book::factory()->create(['available_copies' => 1]);
 
+        $borrowDate = now()->toDateString();
+        $dueDate = now()->addDays(14)->toDateString();
+
         $borrowData = [
             'book_id' => $book->id,
-            'borrow_date' => now()->toDateString(),
+            'borrow_date' => $borrowDate,
+            'due_date' => $dueDate,
         ];
 
         $response = $this->withHeaders([

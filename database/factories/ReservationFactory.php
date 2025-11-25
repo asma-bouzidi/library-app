@@ -1,0 +1,25 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Reservation;
+use App\Models\User;
+use App\Models\Book;
+
+/**
+ * @extends Factory<Reservation>
+ */
+class ReservationFactory extends Factory
+{
+    protected $model = Reservation::class;
+
+    public function definition(): array
+    {
+        return [
+            'user_id' => User::factory(),
+            'book_id' => Book::factory(),
+            'status' => 'active',
+        ];
+    }
+}
