@@ -107,6 +107,17 @@ Feature tests are available for Auth, Book, Borrow, and Reservation functionalit
 4. Push to the branch.
 5. Open a Pull Request.
 
+## Development Status
+
+The following features are currently in development or pending implementation:
+
+- **Update LibraryController**: Modify `booksIndex` and `bookEdit` methods for paginated books and filters.
+- **Add Web Routes for Book Management**: Add POST/PUT routes for book creation and updates with authentication and admin middleware.
+- **Implement Session-Based Authentication UI**: Create login/register views, add web routes, and handle session authentication.
+- **Update Blade Views and Forms**: Ensure forms submit to new routes and add flash message displays.
+- **Seed Admin User**: Update UserSeeder to create an admin user.
+- **Testing and Final Touches**: Run tests, check dependencies, and finalize configurations.
+
 ## License
 
 This project is licensed under the MIT License.
