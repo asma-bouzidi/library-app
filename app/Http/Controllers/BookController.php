@@ -48,7 +48,11 @@ class BookController extends Controller
 
         $book = Book::create($request->all());
 
-        return response()->json($book, 201);
+        if ($request->expectsJson()) {
+            return response()->json($book, 201);
+        }
+
+        return redirect()->route('books.index')->with('status', 'Book created successfully!');
     }
 
     // View a specific book
@@ -70,7 +74,11 @@ class BookController extends Controller
 
         $book->update($request->all());
 
-        return response()->json($book, 200);
+        if ($request->expectsJson()) {
+            return response()->json($book, 200);
+        }
+
+        return redirect()->route('books.index')->with('status', 'Book updated successfully!');
     }
 
     // Delete a book
@@ -78,6 +86,10 @@ class BookController extends Controller
     {
         $book->delete();
 
-        return response()->json(null, 204);
+        if (request()->expectsJson()) {
+            return response()->json(null, 204);
+        }
+
+        return redirect()->route('books.index')->with('status', 'Book deleted successfully!');
     }
 }
