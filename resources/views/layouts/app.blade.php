@@ -9,32 +9,32 @@
 <body class="bg-[#F8F4EC] text-[#2B1F1A] font-sans min-h-screen flex flex-col">
 
     <!-- Header -->
-    <header class="bg-[#2B1F1A] text-[#F8F4EC] py-6 px-10 flex justify-between items-center">
-        <a href="/" class="text-2xl font-serif">Library</a>
-        <nav class="space-x-4">
-            <a href="/books" class="hover:text-[#C6A15B] transition-colors">Livres</a>
-            <a href="/dashboard" class="hover:text-[#C6A15B] transition-colors">Dashboard</a>
+    <header class="bg-[#2B1F1A] text-[#F8F4EC] py-8 px-12 flex justify-between items-center shadow-lg border-b border-[#C6A15B]/20">
+        <a href="/" class="text-3xl font-serif tracking-wide hover:scale-105 transition-transform duration-300">Bibliothèque Raffinée</a>
+        <nav class="space-x-8 text-lg">
+            <a href="/books" class="hover:text-[#C6A15B] transition-all duration-300 hover:scale-105">Livres</a>
+            <a href="/dashboard" class="hover:text-[#C6A15B] transition-all duration-300 hover:scale-105">Dashboard</a>
             @guest
-                <a href="/login" class="hover:text-[#C6A15B] transition-colors">Connexion</a>
-                <a href="/register" class="hover:text-[#C6A15B] transition-colors">Inscription</a>
+                <a href="/login" class="hover:text-[#C6A15B] transition-all duration-300 hover:scale-105">Connexion</a>
+                <a href="/register" class="hover:text-[#C6A15B] transition-all duration-300 hover:scale-105">Inscription</a>
             @else
                 <form method="POST" action="{{ route('logout') }}" class="inline">
                     @csrf
-                    <button type="submit" class="hover:text-[#C6A15B] transition-colors">Déconnexion</button>
+                    <button type="submit" class="hover:text-[#C6A15B] transition-all duration-300 hover:scale-105">Déconnexion</button>
                 </form>
             @endguest
         </nav>
     </header>
 
     <!-- Main content -->
-    <main class="flex-grow container mx-auto px-4 py-8">
+    <main class="flex-grow container mx-auto px-8 py-12 max-w-7xl">
         @if(session('status'))
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+            <div class="bg-[#7C8C72]/10 border border-[#7C8C72] text-[#4B3621] px-6 py-4 rounded-lg mb-8 shadow-sm">
                 {{ session('status') }}
             </div>
         @endif
         @if($errors->any())
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            <div class="bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-lg mb-8 shadow-sm">
                 <ul>
                     @foreach($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -46,8 +46,11 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#2B1F1A] text-[#F8F4EC] text-center py-8 text-sm tracking-wider">
-        &copy; {{ date('Y') }} Library App. Tous droits réservés.
+    <footer class="bg-[#2B1F1A] text-[#F8F4EC] text-center py-12 text-sm tracking-wider border-t border-[#C6A15B]/20">
+        <div class="max-w-4xl mx-auto px-8">
+            <p class="text-lg font-serif mb-4">Bibliothèque Raffinée</p>
+            <p>&copy; {{ date('Y') }} Tous droits réservés. Une collection élégante de littérature classique et moderne.</p>
+        </div>
     </footer>
 
 </body>

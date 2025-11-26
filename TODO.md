@@ -1,28 +1,19 @@
-# TODO: Finish Library App
+# TODO: Refine App Appearance for Raffinéé Old Money Aesthetic
 
-## 1. Update LibraryController
-- [ ] Modify `booksIndex` method to fetch paginated books with filters and pass `$books` to the view.
-- [ ] Modify `bookEdit` method to fetch the specific book by ID and pass `$book` to the view.
+## Overview
+Enhance the Laravel library app's appearance to embody a more "raffinéé old money and proportional" aesthetic. This involves improving spacing, typography, layout proportions, and adding subtle decorative elements for elegance and wealth.
 
-## 2. Add Web Routes for Book Management
-- [ ] Add POST `/books` route pointing to `BookController@store` with 'auth' and 'admin' middleware.
-- [ ] Add PUT `/books/{id}` route pointing to `BookController@update` with 'auth' and 'admin' middleware.
-- [ ] Optionally add DELETE `/books/{id}` route for book deletion.
+## Tasks
+- [x] Update global layout (app.blade.php) with refined spacing, typography, and decorative elements
+- [ ] Enhance welcome page (welcome.blade.php) with better proportions and elegance
+- [ ] Refine dashboard page (dashboard.blade.php) with improved card layouts and spacing
+- [ ] Update home page (home.blade.php) with enhanced book cards and layout
+- [ ] Improve auth pages (login.blade.php, register.blade.php) with elegant forms and proportions
+- [ ] Refine library pages (books/index.blade.php, create.blade.php, edit.blade.php) with better styling
+- [ ] Add custom CSS to app.css for refined shadows, borders, and spacing
+- [ ] Test and verify all pages for consistency and proportionality
 
-## 3. Implement Session-Based Authentication UI
-- [ ] Create login blade view (`resources/views/auth/login.blade.php`).
-- [ ] Create register blade view (`resources/views/auth/register.blade.php`).
-- [ ] Add web routes for GET/POST login and register.
-- [ ] Create or modify controllers to handle web session login/register/logout.
-- [ ] Add logout route and link in layout.
-
-## 4. Update Blade Views and Forms
-- [ ] Ensure create and edit forms submit to the new web routes.
-- [ ] Add flash message display for success/errors in views.
-
-## 5. Seed Admin User
-- [ ] Update UserSeeder to create an admin user for initial access.
-
-## 6. Testing and Final Touches
-- [ ] Run tests to ensure functionality works.
-- [ ] Check for any missing dependencies or configurations.
+## Notes
+- Use existing old money color palette: cream (#F8F4EC), espresso (#2B1F1A), mocha (#4B3621), sage (#7C8C72), gold (#C6A15B)
+- Leverage Playfair Display for headings, Inter for body text
+- Focus on balanced layouts, larger spacing, and subtle elegance
