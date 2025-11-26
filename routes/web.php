@@ -47,6 +47,7 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/books', [LibraryController::class, 'booksIndex'])->name('books.index');
 Route::get('/books/create', [LibraryController::class, 'bookCreate'])->name('books.create');
 Route::get('/books/{id}/edit', [LibraryController::class, 'bookEdit'])->name('books.edit');
+Route::get('/authors', [LibraryController::class, 'authorsIndex'])->name('authors.index');
 
 // Protected book management routes
 Route::middleware(['auth', 'admin'])->group(function () {

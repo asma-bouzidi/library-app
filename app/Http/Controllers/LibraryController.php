@@ -47,4 +47,10 @@ class LibraryController extends Controller
         $book = Book::findOrFail($id);
         return view('library.books.edit', compact('book', 'id'));
     }
+
+    // Show the list of authors
+    public function authorsIndex()
+    {
+        return view('authors');
+    }
 }
