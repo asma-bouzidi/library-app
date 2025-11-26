@@ -7,56 +7,49 @@
 </head>
 <body class="bg-[#FCFAF7] text-[#2B1F1A] min-h-screen">
 
-    {{-- Header --}}
-    <header class="w-full bg-[#2B1F1A] text-[#FCFAF7] shadow-md">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    @auth
+        @include('layouts.sidebar')
 
-            {{-- Logo --}}
-            <div class="text-2xl font-serif tracking-wide">
-                📚 Library
-            </div>
+        <div class="ml-64">
+            @endif
 
-            {{-- Navigation --}}
-            <nav class="flex items-center gap-6 text-sm uppercase tracking-wider">
+            {{-- Header --}}
+            <header class="w-full bg-[#2B1F1A] text-[#FCFAF7] shadow-md">
+                <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-                <a href="/" class="hover:text-[#C6A15B] transition">
-                    Accueil
-                </a>
+                    <div class="text-2xl font-serif tracking-wide">
+                        📚 Library
+                    </div>
 
-                @auth
-                    <a href="/dashboard" class="hover:text-[#C6A15B] transition">
-                        Dashboard
-                    </a>
+                    <nav class="flex items-center gap-6 text-sm uppercase tracking-wider">
 
-                    <form method="POST" action="{{ route('logout') }}" class="inline">
-                        @csrf
-                        <button type="submit" class="hover:text-[#C6A15B] transition">
-                            Déconnexion
-                        </button>
-                    </form>
-                @endauth
+                        <a href="/" class="hover:text-[#C6A15B] transition">
+                            Accueil
+                        </a>
 
-                @guest
-                    <a href="{{ route('login') }}" class="hover:text-[#C6A15B] transition">
-                        Connexion
-                    </a>
+                        @guest
+                            <a href="{{ route('login') }}" class="hover:text-[#C6A15B] transition">
+                                Connexion
+                            </a>
+                            <a href="{{ route('register') }}" class="hover:text-[#C6A15B] transition">
+                                Inscription
+                            </a>
+                        @endguest
 
-                    <a href="{{ route('register') }}" class="hover:text-[#C6A15B] transition">
-                        Inscription
-                    </a>
-                @endguest
+                    </nav>
 
-            </nav>
+                </div>
+            </header>
 
+            <main class="py-12 px-6">
+                @yield('content')
+            </main>
+
+        @auth
         </div>
-    </header>
-
-    {{-- Contenu des pages --}}
-    <main class="py-12 px-4">
-        @yield('content')
-    </main>
-
-    
+    @endauth
+@include('layouts.footer')
 </body>
+
 </html>
 
