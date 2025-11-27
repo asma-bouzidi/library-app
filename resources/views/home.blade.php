@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_modern')
 
 @section('title', 'Accueil - Library App')
 
