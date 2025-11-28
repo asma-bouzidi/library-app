@@ -1,6 +1,6 @@
-<aside class="w-64 bg-white text-[#2B1F1A] min-h-screen p-6 fixed left-0 top-0 shadow-sm border-r border-gray-200">
+<aside class="w-64 bg-[#2B1F1A] text-[#FCFAF7] min-h-screen p-6 fixed left-0 top-0 shadow-sm border-r border-gray-200">
 
-    <h1 class="text-3xl font-bold text-[#C6A15B] mb-4 tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">
+    <h1 class="text-3xl font-bold text-[#FCFAF7] mb-4 tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">
         🏛️ Loxwood
     </h1>
 
