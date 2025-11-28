@@ -1,8 +1,8 @@
 <aside class="w-64 bg-[#2B1F1A] text-[#FCFAF7] min-h-screen p-6 fixed left-0 top-0">
 
-    <h2 class="text-2xl font-serif mb-10 tracking-wide">
-        📚 Library
-    </h2>
+    <h1 class="text-4xl font-bold text-[#C6A15B] mb-4 tracking-wide">
+        🏛️ Blackwood Archives
+    </h1>
 
     <nav class="flex flex-col gap-4 text-sm uppercase tracking-wider">
 
