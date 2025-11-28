@@ -1,7 +1,8 @@
-# TODO List for Task: Make the Books Page Like the Other
+# TODO: Improve Welcome Page Design
 
-- [x] Change layout from 'layouts.app' to 'layouts.app_modern' in resources/views/library/books/index.blade.php
-- [x] Remove the header section (title and subtitle)
-- [x] Replace the card grid with a table structure showing Title, Author, Year, and Actions (Edit/Delete buttons)
-- [x] Update the "Ajouter un Livre" button to "+ Add Book" to match the style
-- [x] Ensure dynamic data rendering with @foreach($books as $book)
+- [x] Add a subtle background gradient or pattern to enhance visual appeal
+- [x] Improve typography with larger, more stylized fonts and better spacing
+- [x] Add icons to the login and register buttons for better user experience
+- [x] Include a hero image or illustration related to books/libraries
+- [x] Make the layout more dynamic with animations or hover effects
+- [x] Ensure full responsiveness for mobile devices

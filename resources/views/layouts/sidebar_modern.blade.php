@@ -4,6 +4,8 @@
         🏛️ Loxwood
     </h1>
 
+    <hr class="border-t border-[#FCFAF7] my-4">
+
     <nav class="flex flex-col gap-4 text-sm uppercase tracking-wide">
 
         <a href="/" class="hover:text-[#C6A15B] hover:scale-105 transition-all duration-300 ease-in-out px-4 py-2 rounded-lg hover:bg-[#C6A15B]/10 hover:shadow-md">
