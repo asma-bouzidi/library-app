@@ -6,3 +6,10 @@
 - [x] Include a hero image or illustration related to books/libraries
 - [x] Make the layout more dynamic with animations or hover effects
 - [x] Ensure full responsiveness for mobile devices
+
+# TODO: Apply Welcome Page Style to Login Page
+
+- [x] Add background gradient similar to welcome page
+- [x] Improve form layout and styling
+- [x] Add visual elements like icons or subtle animations
+- [x] Ensure responsiveness
