@@ -1,27 +1,40 @@
-@extends('layouts.app')
-
-@section('title', 'Liste des Livres - Library App')
+@extends('layouts.app_modern')
 
 @section('content')
-<div class="text-center mb-12">
-    <h1 class="text-4xl md:text-5xl font-serif mb-4 text-[#4B3621]">Collection de Livres</h1>
-    <p class="text-lg md:text-xl text-[#7C8C72]">Découvrez tous vos ouvrages préférés</p>
-</div>
+<div class="bg-white p-8 rounded-2xl shadow">
 
-<div class="flex justify-end mb-6">
-    <a href="{{ route('books.create') }}" class="px-6 py-2 rounded-2xl bg-[#C6A15B] text-[#2B1F1A] font-serif hover:bg-[#b08d4f] transition-all">Ajouter un Livre</a>
-</div>
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-serif">Books</h2>
+        <button class="btn-dark">+ Add Book</button>
+    </div>
 
-<div class="grid md:grid-cols-3 gap-8">
-    @foreach($books as $book)
-        <div class="bg-[#FAFAF7] border border-[#E5DCC8] rounded-2xl p-6 shadow-sm">
-            <h3 class="text-2xl font-serif mb-2 text-[#4B3621]">{{ $book->title }}</h3>
-            <p class="text-[#7C8C72] mb-4">{{ $book->author }}</p>
-            <div class="flex justify-between items-center text-sm">
-                <span class="italic text-[#7C8C72]">{{ $book->year }}</span>
-                <a href="{{ url('/books/'.$book->id) }}" class="text-[#C6A15B] hover:underline">Voir →</a>
-            </div>
-        </div>
-    @endforeach
+    <table class="w-full text-left">
+        <thead>
+            <tr class="border-b">
+                <th class="py-3">Title</th>
+                <th class="py-3">Author</th>
+                <th class="py-3">Year</th>
+                <th class="py-3">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($books as $book)
+                <tr class="border-b hover:bg-gray-50">
+                    <td class="py-3">{{ $book->title }}</td>
+                    <td class="py-3">{{ $book->author }}</td>
+                    <td class="py-3">{{ $book->year }}</td>
+                    <td class="py-3 flex gap-3">
+                        <a href="{{ route('books.edit', $book->id) }}" class="btn-outline">Edit</a>
+                        <form method="POST" action="{{ route('books.destroy', $book) }}" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-dark" onclick="return confirm('Are you sure?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
 </div>
 @endsection

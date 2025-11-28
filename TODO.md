@@ -1,14 +1,7 @@
-# TODO List for Task: Remove Header from Every Page Completely
+# TODO List for Task: Make the Books Page Like the Other
 
-- [x] Change layout from 'layouts.app' to 'layouts.app_modern' in all view files to remove header:
-  - [x] resources/views/welcome.blade.php
-  - [x] resources/views/home.blade.php
-  - [x] resources/views/dashboard.blade.php
-  - [x] resources/views/books.blade.php
-  - [x] resources/views/authors.blade.php
-  - [x] resources/views/library/books/create.blade.php
-  - [x] resources/views/library/books/index.blade.php
-  - [x] resources/views/library/books/edit.blade.php
-  - [x] resources/views/auth/register.blade.php
-  - [x] resources/views/auth/login.blade.php
-- [x] "Accueil" button is already present in the sidebar (resources/views/layouts/sidebar_modern.blade.php)
+- [x] Change layout from 'layouts.app' to 'layouts.app_modern' in resources/views/library/books/index.blade.php
+- [x] Remove the header section (title and subtitle)
+- [x] Replace the card grid with a table structure showing Title, Author, Year, and Actions (Edit/Delete buttons)
+- [x] Update the "Ajouter un Livre" button to "+ Add Book" to match the style
+- [x] Ensure dynamic data rendering with @foreach($books as $book)
