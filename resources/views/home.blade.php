@@ -1,6 +1,6 @@
 @extends('layouts.app_modern')
 
-@section('title', 'Accueil - Library App')
+@section('title', 'Accueil - Blackwood Archives')
 
 @section('content')
 <div class="text-center mb-12">

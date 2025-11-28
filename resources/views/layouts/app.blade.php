@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Library App</title>
+    <title>Blackwood Archives</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#FCFAF7] text-[#2B1F1A] min-h-screen">
@@ -18,7 +18,7 @@
                 <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
                     <div class="text-2xl font-serif tracking-wide">
-                        📚 Library
+                        📚 Blackwood Archives
                     </div>
 
                     <nav class="flex items-center gap-6 text-sm uppercase tracking-wider">
