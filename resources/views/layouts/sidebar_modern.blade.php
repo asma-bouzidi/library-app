@@ -9,7 +9,7 @@
     <nav class="flex flex-col gap-4 text-sm uppercase tracking-wide">
 
         <a href="/" class="hover:text-[#C6A15B] hover:scale-105 transition-all duration-300 ease-in-out px-4 py-2 rounded-lg hover:bg-[#C6A15B]/10 hover:shadow-md">
-            Accueil
+            Home
         </a>
 
         <a href="/dashboard" class="hover:text-[#C6A15B] hover:scale-105 transition-all duration-300 ease-in-out px-4 py-2 rounded-lg hover:bg-[#C6A15B]/10 hover:shadow-md">
@@ -17,17 +17,17 @@
         </a>
 
         <a href="/books" class="hover:text-[#C6A15B] hover:scale-105 transition-all duration-300 ease-in-out px-4 py-2 rounded-lg hover:bg-[#C6A15B]/10 hover:shadow-md">
-            Livres
+            Books
         </a>
 
         <a href="/authors" class="hover:text-[#C6A15B] hover:scale-105 transition-all duration-300 ease-in-out px-4 py-2 rounded-lg hover:bg-[#C6A15B]/10 hover:shadow-md">
-            Auteurs
+            Authors
         </a>
 
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button class="mt-32 text-left hover:text-red-500 hover:scale-105 transition-all duration-300 ease-in-out px-4 py-2 rounded-lg hover:bg-red-50 hover:shadow-md">
-                Déconnexion
+                Logout
             </button>
         </form>
 
