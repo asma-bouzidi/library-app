@@ -1,10 +1,10 @@
 @extends('layouts.app_modern')
 
-@section('title', 'Accueil - Blackwood Archives')
+@section('title', 'Accueil - Loxwood')
 
 @section('content')
 <div class="text-center mb-12">
-    <h1 class="text-4xl md:text-5xl font-serif mb-4 text-[#4B3621]">Bienvenue dans votre bibliothèque</h1>
+    <h1 class="text-4xl md:text-5xl font-serif mb-4 text-[#4B3621]">Bienvenue dans Loxwood</h1>
     <p class="text-lg md:text-xl text-[#7C8C72]">Une collection raffinée de livres classiques et modernes</p>
 </div>
 

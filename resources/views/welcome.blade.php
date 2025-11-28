@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex flex-col items-center justify-center text-center">
 
-    <h1 class="text-5xl font-serif font-bold mb-4">Blackwood Archives</h1>
+    <h1 class="text-5xl font-serif font-bold mb-4">Loxwood</h1>
 
     <p class="text-lg text-[#7C8C72] mb-10 max-w-xl">
         Une bibliothèque élégante pour gérer vos livres avec style.

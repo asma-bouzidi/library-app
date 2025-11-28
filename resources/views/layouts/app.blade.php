@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Blackwood Archives</title>
+    <title>Loxwood</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#FCFAF7] text-[#2B1F1A] min-h-screen">

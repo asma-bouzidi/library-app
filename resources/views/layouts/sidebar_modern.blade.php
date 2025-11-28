@@ -1,7 +1,7 @@
 <aside class="w-64 bg-white text-[#2B1F1A] min-h-screen p-6 fixed left-0 top-0 shadow-sm border-r border-gray-200">
 
-    <h1 class="text-4xl font-bold text-[#C6A15B] mb-4 tracking-wide">
-        🏛️ Blackwood Archives
+    <h1 class="text-3xl font-bold text-[#C6A15B] mb-4 tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">
+        🏛️ Loxwood
     </h1>
 
     <nav class="flex flex-col gap-4 text-sm uppercase tracking-wide">

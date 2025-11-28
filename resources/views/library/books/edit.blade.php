@@ -1,6 +1,6 @@
 @extends('layouts.app_modern')
 
-@section('title', 'Modifier un Livre - Blackwood Archives')
+@section('title', 'Modifier un Livre - Loxwood')
 
 @section('content')
 <div class="flex justify-center items-start">
